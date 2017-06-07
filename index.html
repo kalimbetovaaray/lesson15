@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>JavaScript</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function checkForm(form) {
+			var email = form.email.value;
+			var m = email.match(/^[A-Za-z0-9][A-Za-z0-9\._-]*[A-Za-z0-9_]+$/);
+			if (!m) {
+				alert("Логин введён неверно");
+				return false;
+			}
+			return true;
+		}
+	</script>
+	<form name="myform" action="https://www.yandex.ru/" method="post" onsubmit="return checkForm(this)">
+	  <p>
+	   E-mail: <input type="text" name="email"/>
+	  </p>
+	  <p>
+	   <input type="submit" value="Проверить"/>
+	  </p>
+	</form>
+</body>
+</html>
+<!-----
+Создайте форму, в которой будет поле для ввода логина и кнопка «Проверить».
+Создайте функцию, которая вызывается при нажатии на кнопку «Проверить» и выводящую правильность ввода логина.
+Примечание: Логин должен быть от 3-х до 32-х символов, и должен содержать только буквы и цифры.
+----!>
